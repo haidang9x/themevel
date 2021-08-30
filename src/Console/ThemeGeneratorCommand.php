@@ -131,6 +131,15 @@ class ThemeGeneratorCommand extends Command
         }
 
         $this->createStubs($themeStubFiles, $createdThemePath);
+        $viewsDefaultFolder = [
+            'layouts-config',
+            'pages-config',
+            'assets',
+            'views',
+        ];
+        foreach($viewsDefaultFolder as $dir) {
+            File::copyDirectory($this->themePath . '/default/' . $dir, $createdThemePath);
+        }
 
         $this->info(ucfirst($this->theme['name']).' Theme Folder Successfully Generated !!!');
     }
