@@ -131,6 +131,7 @@ class ThemeGeneratorCommand extends Command
         }
 
         $this->createStubs($themeStubFiles, $createdThemePath);
+
         $viewsDefaultFolder = [
             'layouts-config',
             'pages-config',
