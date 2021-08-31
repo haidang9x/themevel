@@ -6,6 +6,7 @@ use Illuminate\Config\Repository;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem as File;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File as FileFace;
 
 class ThemeGeneratorCommand extends Command
 {
@@ -139,7 +140,7 @@ class ThemeGeneratorCommand extends Command
             'views',
         ];
         foreach($viewsDefaultFolder as $dir) {
-            File::copyDirectory($this->themePath . '/default/' . $dir, $createdThemePath);
+            FileFace::copyDirectory($this->themePath . '/default/' . $dir, $createdThemePath);
         }
 
         $this->info(ucfirst($this->theme['name']).' Theme Folder Successfully Generated !!!');
