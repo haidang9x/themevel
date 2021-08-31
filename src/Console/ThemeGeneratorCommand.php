@@ -140,7 +140,7 @@ class ThemeGeneratorCommand extends Command
             'views',
         ];
         foreach($viewsDefaultFolder as $dir) {
-            FileFace::copyDirectory($this->themePath . '/default/' . $dir, $createdThemePath);
+            FileFace::copyDirectory($this->themePath . '/default/' . $dir, $createdThemePath . '/' . $dir);
         }
 
         $this->info(ucfirst($this->theme['name']).' Theme Folder Successfully Generated !!!');
